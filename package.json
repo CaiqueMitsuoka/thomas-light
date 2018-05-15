@@ -18,6 +18,7 @@
   "homepage": "https://github.com/CaiqueMitsuoka/thomas-light#readme",
   "dependencies": {
     "epoll": "^2.0.1",
-    "rpi-gpio": "^0.9.1"
+    "rpi-gpio": "^0.9.1",
+    "express": "^4.16.3"
   }
 }

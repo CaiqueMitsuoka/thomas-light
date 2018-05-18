@@ -7,5 +7,5 @@ const router = require('./routes/router')
 app.use('/', router)
 
 app.listen(PORT, () => {
-  console.log(`Listening on: ${PORT}`)
+  console.log(`[LIGHT-LIGHTER-SERVER] Listening on: ${PORT}`)
 })

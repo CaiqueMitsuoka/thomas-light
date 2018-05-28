@@ -1,14 +1,12 @@
 const lights = {}
 const socket = require('../socket/server')
-const baseUrl = process.env.BASE_URL
 
 const lightsController = (server) => {
   return controller = {
     socket: socket.start(server, lights),
     show: (request, response) => {
       response.render('lights/show', {
-        lights: Object.keys(lights),
-        baseUrl: baseUrl
+        lights: Object.keys(lights)
       })
     },
     edit: (request, response, next) => {

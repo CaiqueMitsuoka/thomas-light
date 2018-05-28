@@ -1,9 +1,16 @@
 const socket = require('socket.io-client')(process.env.SERVER_URL);
+const LightLighter = require('../light-lighter/index')
 const state = {
   mainLight: false
 }
 
 const toggleMainLight = () => {
+  if(state.mainLight) {
+    LightLighter.off()
+  } else {
+    LightLighter.on()
+  }
+
   state.mainLight = !state.mainLight
 }
 

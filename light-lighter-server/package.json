@@ -1,6 +1,6 @@
 {
-  "name": "eureka-server",
-  "version": "0.0.1",
+  "name": "light-lighter-server",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -8,10 +8,9 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "socket.io": "^2.1.0"
+    "axios": "^0.18.0",
+    "express": "^4.16.3"
   }
 }

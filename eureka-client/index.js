@@ -1,4 +1,4 @@
-const socket = require('socket.io-client')("http://localhost:8080");
+const socket = require('socket.io-client')(process.env.SERVER_URL);
 const state = {
   mainLight: false
 }

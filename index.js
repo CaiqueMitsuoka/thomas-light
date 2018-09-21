@@ -1,5 +1,6 @@
 const socket = require('socket.io-client')(process.env.SERVER_URL);
 const LightLighter = require('./light-lighter/index')
+const VigilantGuitar = require('./vigilant-guitar')
 const state = {
   mainLight: false
 }
@@ -14,6 +15,8 @@ const toggleMainLight = () => {
   state.mainLight = !state.mainLight
 }
 
+VigilantGuitar.init()
+
 socket.on('connect', () => {
   socket.emit('register', process.env.ID)
   console.log('[THOMAS-LIGHT-CLIENT][WS][CONNECTED]')
@@ -27,4 +30,8 @@ socket.on('connect', () => {
 .on('status.update', () => {
   toggleMainLight()
   console.log(`[THOMAS-LIGHT-CLIENT][WS][STATUS][UPDATE] State: ${state.mainLight}`)
+})
+
+VigilantGuitar.start((color) => {
+  socket.emit('guitar.press', color)
 })
